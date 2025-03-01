@@ -1,29 +1,33 @@
-public class KaryawanKontrak extends Karyawan {
-    double gaji_per_hari;
-    int jml_masuk;
-   
+public class KaryawanKontrak extends Karyawan{
+    double gajiHarian;
+    int hariMasuk;
     public KaryawanKontrak(String nama, double tunjangan){
-        super(nama,tunjangan);
-        gaji_per_hari = 200000;
+        super(nama, tunjangan);
+        gajiHarian = 200000;
+
+    }
+    //membuat setter
+    public void setKaryawanKontrak(double gajiHarian, int hariMasuk) {
+        this.gajiHarian = gajiHarian;
+        this.hariMasuk = hariMasuk;
+
     }
 
-    public void setKaryawankontrak(double gph, int jml_masuk){
-        gaji_per_hari = gph;
-        this.jml_masuk = jml_masuk;
-    }
-    
     public double getGaji(){
-        double total =
-        (gaji_per_hari * jml_masuk) + super.getTunjangan();
+        double total = (gajiHarian + hariMasuk) + super.getTunjangan();
         return total;
+    }
+
+    public double getGajiHarian() {
+        return gajiHarian;
     }
 
     public void infoKaryawan(){
         System.out.println("Nama: " + super.getNama());
-        System.out.println("Gaji/hari : " + gaji_per_hari);
-        System.out.println("Jumlah masuk : " + jml_masuk);
-        System.out.println("Total Gaji: " + getGaji());
-        System.out.println("=====================================");
+        System.out.println("Gaji/hari: " + getGajiHarian());
+        System.out.println("Jumlah masuk: " + hariMasuk);
+        System.out.println("Total gaji: " + getGaji());
+        System.out.println("============================");
+
     }
 }
-    
